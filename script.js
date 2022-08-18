@@ -24,21 +24,39 @@ function switchMode(mode, values){
 // Switch Theme Dynamically
 function switchTheme(event) {
     if (event.target.checked) {
+        localStorage.setItem('theme', 'dark');
         switchMode('dark', {
             navBgColor: 'rgb(0 0 0 / 50%)',
             textBoxBgColor: 'rgb(255 255 255 / 50%)',
             toggleTextContent: 'Dark Mode',
             toogleIcon: 'moon',
-        })
+        });
     } else {
+        localStorage.setItem('theme', 'light');
         switchMode('light', {
             navBgColor: 'rgb(255 255 255 / 50%)',
             textBoxBgColor: 'rgb(0 0 0 / 50%)',
             toggleTextContent: 'Light Mode',
             toogleIcon: 'sun',
-        })
+        });
     }
 }
 
 // Event Listener
 toggleSwitch.addEventListener('change', switchTheme);
+
+// Check Local Storage For Theme
+const currentTheme = localStorage.getItem('theme');
+if (currentTheme) {
+    document.documentElement.setAttribute('data-theme', currentTheme);
+    if (currentTheme === 'dark') {
+        toggleSwitch.checked = true;
+        switchMode('dark', {
+            navBgColor: 'rgb(0 0 0 / 50%)',
+            textBoxBgColor: 'rgb(255 255 255 / 50%)',
+            toggleTextContent: 'Dark Mode',
+            toogleIcon: 'moon',
+        });
+        
+    } 
+}

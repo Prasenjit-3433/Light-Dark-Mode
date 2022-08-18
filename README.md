@@ -1,7 +1,7 @@
 # Light-Dark-Mode
 Light-Dark Mode ---- A most common feature any modern website usually has nowadays....
 
-HOW IT WORKS;
+HOW IT WORKS:
  * Depending upon whether an user toggle the `switch`, it trigger different states.
  * `event.target.checked` on the input element gives us whether the toggler is checked or not.
  * Now we need to set two different color scheme for dark-light mode. One on the `root` element using `:root`
