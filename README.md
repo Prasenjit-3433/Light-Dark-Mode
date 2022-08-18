@@ -1,4 +1,4 @@
-# Light-Dark-Mode
+# Light-Dark-Mode  [[Link]](https://prasenjitlightdarkmode.netlify.app/)
 Light-Dark Mode ---- A most common feature any modern website usually has nowadays....
 
 HOW IT WORKS:
@@ -7,3 +7,5 @@ HOW IT WORKS:
  * Now we need to set two different color scheme for dark-light mode. One on the `root` element using `:root`
    pseudo selector and another for dark theme using `data-` attribute.
  * It's vey important to set all these attributes at the highest level of the HTML document. [Learn more](https://developer.mozilla.org/en-US/docs/Web/API/Document/documentElement)
+ * At last we use browser's `localStorage` to save the mode of theme. So that even if an user refreshes the
+   page, the mode of the theme does't get changed!.
